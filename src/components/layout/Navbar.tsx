@@ -47,7 +47,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl">
+                    <a className="btn btn-ghost text-xl hidden md:flex">
                         <img src={logo} alt="Logo" />
                     </a>
                 </div>

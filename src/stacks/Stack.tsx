@@ -13,17 +13,19 @@ const badgeColors: Record<Badge, string> = {
 
 interface StackProps {
     stack: StackType;
+    onAdd: (stack: StackType) => void;
+    isSelected: boolean;
 }
 
-const StackCard = ({ stack }: StackProps) => {
+const StackCard = ({ stack, onAdd, isSelected }: StackProps) => {
     const { name, category, description, icon, rating, difficulty, badge } =
         stack;
 
     return (
-        <div className="flex flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div className={`flex flex-col rounded-3xl border ${isSelected?'border-pink-600': 'border-slate-200'} bg-white p-6 shadow-sm`}>
             <div className="flex items-start justify-between">
-                <div className='flex flex-row md:flex-col gap-4 md:gap-0'>
-                    <img src={icon} alt={name} className={`h-7 w-7` }/>
+                <div className="flex flex-row md:flex-col gap-4 md:gap-0">
+                    <img src={icon} alt={name} className={`h-7 w-7`} />
                     <h2 className="mt-0 md:mt-4 text-lg font-bold text-slate-900">
                         {name}
                     </h2>
@@ -53,12 +55,14 @@ const StackCard = ({ stack }: StackProps) => {
                 </span>
             </div>
 
-            <Button variant="secondary" className="w-full mt-4">
+            <Button
+                onClick={() => onAdd(stack)}
+                variant={isSelected ? 'success':"secondary"}
+                className="w-full mt-4"
+                disabled={isSelected}
+            >
                 Add to Stack
             </Button>
-            {/* <button className="mt-6 h-14 w-full rounded-xl bg-slate-950 text-xl text-white">
-                Add to Stack
-            </button> */}
         </div>
     );
 };
