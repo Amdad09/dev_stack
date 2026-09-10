@@ -35,7 +35,8 @@ const StackBar = ({ stacksFetch }: StackBarProps) => {
     };
 
     const handleDelete = (id: string) => {
-        toast.success(`Stack is deleted!`);
+        const stack = myStacks.find(stack => stack.id === id);
+        toast.warning(`${stack?.name} is deleted!`);
         setMyStacks(prev => prev.filter(s => s.id !== id));
     };
 

@@ -29,21 +29,31 @@ const Navbar = () => {
                                 />{' '}
                             </svg>
                         </div>
-                        <ul className="menu menu-sm dropdown-content bg-base-600 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        <ul className="menu menu-sm dropdown-content bg-pink-600 text-white rounded-box z-999 mt-3 w-52 p-2 shadow">
                             <li>
-                                <a>Home</a>
+                                <a className="text-md font-semibold ">
+                                    Home
+                                </a>
                             </li>
                             <li>
-                                <a>Technologies</a>
+                                <a className="text-md font-semibold ">
+                                    Technologies
+                                </a>
                             </li>
                             <li>
-                                <a>Projects</a>
+                                <a className="text-md font-semibold ">
+                                    Projects
+                                </a>
                             </li>
                             <li>
-                                <a>About</a>
+                                <a className="text-md font-semibold ">
+                                    About
+                                </a>
                             </li>
                             <li>
-                                <a>Contact</a>
+                                <a className="text-md font-semibold ">
+                                    Contact
+                                </a>
                             </li>
                         </ul>
                     </div>
