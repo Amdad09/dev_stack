@@ -3,7 +3,7 @@ import Container from '../ui/Container';
 import logo from '../../assets/logo.png'
 const Navbar = () => {
     return (
-        <div className="bg-base-100 shadow-sm">
+        <div className="bg-base-100 shadow-sm sticky top-0 z-50">
             <Container className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -31,9 +31,7 @@ const Navbar = () => {
                         </div>
                         <ul className="menu menu-sm dropdown-content bg-pink-600 text-white rounded-box z-999 mt-3 w-52 p-2 shadow">
                             <li>
-                                <a className="text-md font-semibold ">
-                                    Home
-                                </a>
+                                <a className="text-md font-semibold ">Home</a>
                             </li>
                             <li>
                                 <a className="text-md font-semibold ">
@@ -46,9 +44,7 @@ const Navbar = () => {
                                 </a>
                             </li>
                             <li>
-                                <a className="text-md font-semibold ">
-                                    About
-                                </a>
+                                <a className="text-md font-semibold ">About</a>
                             </li>
                             <li>
                                 <a className="text-md font-semibold ">
@@ -64,7 +60,7 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         <li>
-                            <a className="text-md font-semibold text-slate-700">
+                            <a className="text-md font-semibold  text-pink-600">
                                 Home
                             </a>
                         </li>
@@ -91,14 +87,15 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end flex gap-4">
-                    <Button
+                    {/* <Button
                         rounded="full"
                         size="sm"
                         variant="danger"
                         className="text-slate-600  border-slate-300"
                     >
                         Sign In
-                    </Button>
+                    </Button> */}
+                    <p className="text-slate-600 font-medium">Sign In</p>
                     <Button rounded="full" size="sm">
                         Sign Up
                     </Button>

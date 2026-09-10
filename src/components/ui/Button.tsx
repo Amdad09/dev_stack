@@ -12,12 +12,12 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const baseStyle =
-    'inline-flex justify-center items-center font-semibold cursor-pointer duration-300 disabled:opacity-30 disabled:cursor-not-allowed';
+    'inline-flex justify-center items-center font-semibold cursor-pointer duration-300 disabled:bg-opacity-30 disabled:cursor-not-allowed';
 
 const variantStyles: Record<Variant, string> = {
     primary: 'bg-pink-600 text-white hover:bg-pink-700',
     secondary: 'bg-slate-900 text-white hover:bg-slate-950',
-    success: 'text-pink-600 bg-pink-200 hover:bg-pink-300',
+    success: 'text-pink-600 bg-pink-100 hover:bg-pink-200',
     danger: 'border border-red-600 text-red-600 hover:bg-red-200',
     // danger: 'bg-red-600 text-white hover:bg-red-700',
 };

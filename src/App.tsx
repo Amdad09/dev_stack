@@ -14,7 +14,7 @@ const App = () => {
       <div>
       <Navbar />
       <Hero/>
-          <Suspense fallback={<>Loading...</>}>
+          <Suspense fallback={<div className="text-center font-bold text-xl text-pink-600">Loading...</div>}>
               <StackBar stacksFetch={stacksFetch()} />
       </Suspense>
       <Footer/>

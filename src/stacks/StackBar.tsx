@@ -40,6 +40,10 @@ const StackBar = ({ stacksFetch }: StackBarProps) => {
         setMyStacks(prev => prev.filter(s => s.id !== id));
     };
 
+    const handleDeleteAll = () => {
+        toast.error("Deleted all stack!");
+        setMyStacks([]);
+    };
     return (
         <div className="pb-12 mb:pb-14 lg:pb-16">
             <Container>
@@ -66,6 +70,7 @@ const StackBar = ({ stacksFetch }: StackBarProps) => {
                         <MyStackBoard
                             myStacks={myStacks}
                             onDelete={handleDelete}
+                            onDeleteAll={ handleDeleteAll}
                         />
                     </div>
                 </div>

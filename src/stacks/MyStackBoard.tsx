@@ -1,12 +1,14 @@
 import { RxCross1 } from 'react-icons/rx';
 import type { StackType } from './StackBar';
+import Button from '../components/ui/Button';
 
 interface MyStackBoardProps {
     myStacks: StackType[];
-  onDelete: (id: string) => void;
+    onDelete: (id: string) => void;
+    onDeleteAll: () =>void;
 }
 
-const MyStackBoard = ({ myStacks, onDelete }: MyStackBoardProps) => {
+const MyStackBoard = ({ myStacks, onDelete, onDeleteAll }: MyStackBoardProps) => {
     return (
         <div className="border border-gray-200 p-6 rounded-2xl">
             <h3 className="text-2xl font-bold text-slate-800 pb-2">
@@ -53,7 +55,8 @@ const MyStackBoard = ({ myStacks, onDelete }: MyStackBoardProps) => {
                                 />
                             </div>
                         ))}
-                    </div>
+                        </div>
+                        <Button onClick={onDeleteAll} variant='danger' className='w-full mt-8'>Remove All</Button>
                 </div>
             )}
         </div>

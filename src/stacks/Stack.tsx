@@ -22,7 +22,9 @@ const StackCard = ({ stack, onAdd, isSelected }: StackProps) => {
         stack;
 
     return (
-        <div className={`flex flex-col rounded-3xl border ${isSelected?'border-pink-600': 'border-slate-200'} bg-white p-6 shadow-sm`}>
+        <div
+            className={`flex flex-col rounded-3xl border ${isSelected ? 'border-pink-600 shadow-pink-200 border-2' : 'border-slate-200'} bg-white p-6 shadow-md `}
+        >
             <div className="flex items-start justify-between">
                 <div className="flex flex-row md:flex-col gap-4 md:gap-0">
                     <img src={icon} alt={name} className={`h-7 w-7`} />
@@ -57,11 +59,11 @@ const StackCard = ({ stack, onAdd, isSelected }: StackProps) => {
 
             <Button
                 onClick={() => onAdd(stack)}
-                variant={isSelected ? 'success':"secondary"}
-                className="w-full mt-4"
+                variant={isSelected ? 'success' : 'secondary'}
+                className="w-full mt-4 duration-500 transition "
                 disabled={isSelected}
             >
-                Add to Stack
+                {isSelected ? '✓ Added to Stack' : 'Add to Stack'}
             </Button>
         </div>
     );
