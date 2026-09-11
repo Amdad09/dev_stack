@@ -30,7 +30,7 @@ const Hero = () => {
                         eaque aut repudiandae et a id nisi.
                     </p>
 
-                    <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+                    <div className="flex flex-row gap-3 sm:gap-4">
                         <Button
                             className="w-full bg-linear-to-r from-[#F97316] to-[#EC4899] sm:w-auto"
                             rounded="lg"
