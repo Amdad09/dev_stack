@@ -75,6 +75,14 @@ const Navbar = () => {
                             </a>
                         </li>
                         <li>
+                            <a
+                                href="#addStackForm"
+                                className="text-md font-semibold text-slate-700"
+                            >
+                                Add Stack
+                            </a>
+                        </li>
+                        <li>
                             <a className="text-md font-semibold text-slate-700">
                                 About
                             </a>
@@ -97,7 +105,7 @@ const Navbar = () => {
                     </Button> */}
                     <p className="text-slate-600 font-medium">Sign In</p>
                     <Button rounded="full" size="sm">
-                        Sign Up
+                        <a href="#register">Sign Up</a>
                     </Button>
                 </div>
             </Container>
