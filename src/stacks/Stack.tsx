@@ -23,11 +23,11 @@ const StackCard = ({ stack, onAdd, isSelected }: StackProps) => {
 
     return (
         <div
-            className={`flex flex-col rounded-3xl border ${isSelected ? 'border-pink-600 shadow-pink-200 border-2' : 'border-slate-200'} bg-white p-6 shadow-md `}
+            className={`flex flex-col rounded-3xl border group ${isSelected ? 'border-pink-600 shadow-pink-200 border-2' : 'border-slate-200'} bg-white p-6 shadow-md duration-500 hover:-translate-y-2.5`}
         >
             <div className="flex items-start justify-between">
                 <div className="flex flex-row md:flex-col gap-4 md:gap-0">
-                    <img src={icon} alt={name} className={`h-7 w-7`} />
+                    <img src={icon} alt={name} className={`h-7 w-7 duration-500 group-hover:scale-125 group-hover:shadow-xl group-hover:shadow-slate-300`} />
                     <h2 className="mt-0 md:mt-4 text-lg font-bold text-slate-900">
                         {name}
                     </h2>

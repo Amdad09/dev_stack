@@ -32,12 +32,12 @@ const MyStackBoard = ({ myStacks, onDelete, onDeleteAll }: MyStackBoardProps) =>
                         {myStacks.map((stack) => (
                             <div
                                 key={stack.id}
-                                className="border border-gray-300 rounded-xl flex justify-between items-center p-4 mb-2"
+                                className="border border-gray-300 rounded-xl flex justify-between items-center p-4 mb-2 group"
                             >
                                 <div className="flex gap-3 items-center">
                                     <img
                                         src={stack.icon}
-                                        className="w-9 h-9"
+                                        className="h-7 w-7 duration-500 group-hover:scale-125 group-hover:shadow-xl group-hover:shadow-slate-300"
                                         alt={stack.name}
                                     />
                                     <div>
@@ -55,8 +55,14 @@ const MyStackBoard = ({ myStacks, onDelete, onDeleteAll }: MyStackBoardProps) =>
                                 />
                             </div>
                         ))}
-                        </div>
-                        <Button onClick={onDeleteAll} variant='danger' className='w-full mt-8'>Remove All</Button>
+                    </div>
+                    <Button
+                        onClick={onDeleteAll}
+                        variant="danger"
+                        className="w-full mt-8"
+                    >
+                        Remove All
+                    </Button>
                 </div>
             )}
         </div>

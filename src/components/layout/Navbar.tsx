@@ -1,16 +1,19 @@
+import logo from '../../assets/logo.png';
 import Button from '../ui/Button';
 import Container from '../ui/Container';
-import logo from '../../assets/logo.png'
+
+const navLinks = ['Home', 'Technologies', 'Projects', 'About', 'Contact'];
+
 const Navbar = () => {
     return (
-        <div className="bg-base-100 shadow-sm sticky top-0 z-50">
-            <Container className="navbar">
-                <div className="navbar-start">
+        <div className="sticky top-0 z-50 bg-base-100 shadow-sm">
+            <Container className="navbar relative">
+                <div className="absolute left-2 lg:hidden">
                     <div className="dropdown">
                         <div
                             tabIndex={0}
                             role="button"
-                            className="btn btn-ghost lg:hidden"
+                            className="btn btn-ghost btn-sm"
                         >
                             <svg
                                 aria-label="Menu"
@@ -20,92 +23,58 @@ const Navbar = () => {
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
                             >
-                                {' '}
                                 <path
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
                                     strokeWidth="2"
                                     d="M4 6h16M4 12h8m-8 6h16"
-                                />{' '}
+                                />
                             </svg>
                         </div>
-                        <ul className="menu menu-sm dropdown-content bg-pink-600 text-white rounded-box z-999 mt-3 w-52 p-2 shadow">
-                            <li>
-                                <a className="text-md font-semibold ">Home</a>
-                            </li>
-                            <li>
-                                <a className="text-md font-semibold ">
-                                    Technologies
-                                </a>
-                            </li>
-                            <li>
-                                <a className="text-md font-semibold ">
-                                    Projects
-                                </a>
-                            </li>
-                            <li>
-                                <a className="text-md font-semibold ">About</a>
-                            </li>
-                            <li>
-                                <a className="text-md font-semibold ">
-                                    Contact
-                                </a>
-                            </li>
+
+                        <ul className="menu menu-sm dropdown-content z-999 mt-3 w-52 rounded-box bg-base-100 p-2 shadow">
+                            {navLinks.map((name) => (
+                                <li key={name}>
+                                    <span className="text-md font-semibold text-slate-700">
+                                        {name}
+                                    </span>
+                                </li>
+                            ))}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl hidden md:flex">
-                        <img src={logo} alt="Logo" />
-                    </a>
                 </div>
+
+                <div className="absolute left-1/2 flex -translate-x-1/2 items-center gap-1 lg:hidden">
+                    <img src={logo} alt="Logo" className="h-6" />
+                </div>
+
+                <div className="navbar-start hidden items-center gap-2 lg:flex">
+                    <img src={logo} alt="Logo" className="h-6 md:h-8" />
+                </div>
+
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                        <li>
-                            <a className="text-md font-semibold  text-pink-600">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a className="text-md font-semibold text-slate-700">
-                                Technologies
-                            </a>
-                        </li>
-                        <li>
-                            <a className="text-md font-semibold text-slate-700">
-                                Projects
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#addStackForm"
-                                className="text-md font-semibold text-slate-700"
-                            >
-                                Add Stack
-                            </a>
-                        </li>
-                        <li>
-                            <a className="text-md font-semibold text-slate-700">
-                                About
-                            </a>
-                        </li>
-                        <li>
-                            <a className="text-md font-semibold text-slate-700">
-                                Contact
-                            </a>
-                        </li>
+                        {navLinks.map((name) => (
+                            <li key={name}>
+                                <span className="text-md font-semibold text-slate-700">
+                                    {name}
+                                </span>
+                            </li>
+                        ))}
                     </ul>
                 </div>
-                <div className="navbar-end flex gap-4">
-                    {/* <Button
+
+                <div className="absolute right-2 flex items-center gap-2 lg:static lg:navbar-end lg:gap-4">
+                    <span className="text-xs font-medium text-slate-600 lg:text-base">
+                        Sign In
+                    </span>
+
+                    <Button
                         rounded="full"
                         size="sm"
-                        variant="danger"
-                        className="text-slate-600  border-slate-300"
+                        className="px-3 text-xs lg:px-4 lg:text-sm"
                     >
-                        Sign In
-                    </Button> */}
-                    <p className="text-slate-600 font-medium">Sign In</p>
-                    <Button rounded="full" size="sm">
-                        <a href="#register">Sign Up</a>
+                        Sign Up
                     </Button>
                 </div>
             </Container>
